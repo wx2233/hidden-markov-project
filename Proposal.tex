@@ -1,0 +1,110 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{tocloft,lipsum,pgffor}
+\usepackage{appendix}
+\renewcommand{\appendixname}{List of appendices}
+\setcounter{tocdepth}{2}% Include up to \subsubsection in ToC
+
+\usepackage{hyperref}       % hyperlinks
+\hypersetup{
+	colorlinks=true,
+	linkcolor=red,
+	filecolor=magenta,      
+	urlcolor=cyan,
+	citecolor = blue
+}
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{lipsum}		% Can be removed after putting your text content
+\usepackage{amsmath,graphicx,amssymb}
+\usepackage[linesnumbered,boxed,ruled,commentsnumbered]{algorithm2e}%%算法包，注意设置所需可选项
+
+%\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+\numberwithin{equation}{section}
+% Use these for theorems, lemmas, proofs, etc.
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{assumption}{Assumption}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{definition}{Definition}[section]
+\newenvironment{proof}{{\bf Proof:}}{\hfill\rule{2mm}{2mm}}
+
+% set page geometry
+\usepackage[verbose=true,letterpaper]{geometry}
+\AtBeginDocument{
+	\newgeometry{
+		textheight=9in,
+		textwidth=6.5in,
+		top=1in,
+		headheight=14pt,
+		headsep=25pt,
+		footskip=30pt
+	}
+}
+
+\widowpenalty=10000
+\clubpenalty=10000
+\flushbottom
+%\sloppy
+
+% float placement
+\usepackage{natbib}
+\bibliographystyle{abbrvnat}
+\usepackage{authblk}
+
+
+\begin{document}
+	\title{Proposal of Hidden Markov Project}
+	
+	\author[$\star$]{Weijia Xiong}
+
+
+\section{Background}
+
+
+
+We use digital technologies to monitor continuously over time patients behavior. 
+
+1) We would like to leverage this information to study the causal effect of mobile communication (say daily counts of outgoing calls) on mental health scores (say anxiety). The goal of the project is to evaluate using simulations the performance of hidden markov models for zero-inflated count data in estimating the causal effect in N-of-1 time series data.
+
+\
+
+
+Mobile health Apps become more and more important in psychiatry. Among mental health patients, there is a great interest in monitoring symptoms with mobile apps [17].  
+The digital techonologites are used to monitor patients behavior over time through collection of the long-term objective data continuosly and automaticly. These data vary from activity data such as GPS, distance travaeled to social communication data such as text messages (eg, the number of outgoing SMS) and phone calls (eg, the number of incoming and outgoing calls, duration outgoing calls). 
+Indeed, using both self-reported information collected by the self-rating questionnaires and the smartphone sensor data offers a unique opportunity to describe the person in terms of his or her lifestyle and behavior at the physical, cognitive, and environmental level. \citet{cornet2018systematic}, \citet{torous2018characterizing} 
+
+Researchers hope to gain insight in the user’s clinical outcome through analysis of the variety of personal data. More studies are needed to establish the relationship between mobile  measurements and clinical symptoms. This mobile phone-based approach may provide an estimation of physiological and mental state. In addition, it may be valueable to predict the changes in clinical states and investigate causal inferences about state changes in patients (eg, those with affective disorders)\citet{dogan2017smartphone}
+
+
+Multiple statistical methods were developed for the analysis of time series data of mental health. However, when the observations are a sequence of unbounded counts, using regular time series models that are established on continuous outcomes with continuous distribution are not suitable.11,12 
+
+
+The Poisson distribution is a natural choice to describe such data. The most important exclusivity of this distribution is the equality of the mean and the variance. But often this exclusivity will not hold and variance is bigger than the mean, which is called over dispersion. Using mixture models is one way to handle this problem.12 As when the data are a series of unbounded counts there may be over dispersion, and serial dependency, using independent Poisson random variables are also not appropriate and some models that incorporate this dependency are needed.12
+Hidden Markov model can accommodate both over dispersion and serial dependency by allowing the probability distribution of each observation to depend on
+
+
+The rapid growth of smart-sensor integration in mobile phones and wearable devices has opened the prospect of increasing access to evidence-based mental health care.  
+In this review, the term sensor-based data includes the quantitative information supplied by the mobile phone and its embedded sensors. Information may range from acceleration to temperature and from light to pressure, but also from number of exchanged short message service (SMS) text messages to number of incoming and outgoing calls. 
+Even if the evidence of association between sensor-based data and psychiatric disorder status and/or severity of psychiatric symptoms is limited and scattered [15-17], it is expected that appropriate management of these data may initiate a new trend in health care provision characterized by tailored and timely interventions [18].
+
+
+\section{Objective}
+
+The primary goal of this project is to build a hidden markov models for zero-inflated count data and self-reported categorical data to predict the clinical state of next time point through estimation of the transition probability of clinical states.
+
+Next, we need to evaluate using simulations the performance of different hidden markov models, such as basic HMM, HMM dealing with missing data, HMM for non-stationary time series and other time series model such as GLM, ARMA.
+
+Furthermore, the final goal is to obtain the causal effect between mobile communication time series data and the clincial outcomes.
+
+\section{Method}
+
+\bibliography{reference}
+\end{document}

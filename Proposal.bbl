@@ -1,0 +1,31 @@
+\begin{thebibliography}{3}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Cornet and Holden(2018)]{cornet2018systematic}
+V.~P. Cornet and R.~J. Holden.
+\newblock Systematic review of smartphone-based passive sensing for health and
+  wellbeing.
+\newblock \emph{Journal of biomedical informatics}, 77:\penalty0 120--132,
+  2018.
+
+\bibitem[Dogan et~al.(2017)Dogan, Sander, Wagner, Hegerl, and
+  Kohls]{dogan2017smartphone}
+E.~Dogan, C.~Sander, X.~Wagner, U.~Hegerl, and E.~Kohls.
+\newblock Smartphone-based monitoring of objective and subjective data in
+  affective disorders: where are we and where are we going? systematic review.
+\newblock \emph{Journal of medical Internet research}, 19\penalty0
+  (7):\penalty0 e262, 2017.
+
+\bibitem[Torous et~al.(2018)Torous, Staples, Barnett, Sandoval, Keshavan, and
+  Onnela]{torous2018characterizing}
+J.~Torous, P.~Staples, I.~Barnett, L.~R. Sandoval, M.~Keshavan, and J.-P.
+  Onnela.
+\newblock Characterizing the clinical relevance of digital phenotyping data
+  quality with applications to a cohort with schizophrenia.
+\newblock \emph{NPJ digital medicine}, 1\penalty0 (1):\penalty0 1--9, 2018.
+
+\end{thebibliography}

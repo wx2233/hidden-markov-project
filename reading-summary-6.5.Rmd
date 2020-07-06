@@ -4,7 +4,7 @@ title: |
     |
     | Hidden Markov Models for Zero-Inflated Poisson Counts with an Application to Substance Use
 author: "Weijia Xiong"
-date: "6/1/2020"
+date: "6/3/2020"
 output: beamer_presentation
 fontsize: 10pt
 ---
@@ -18,11 +18,11 @@ library(tidyverse)
 
 - Data
 
-45 participants. The TLFB daily usage for the 12 weeks prior to and 4 weeks after completion of the 2-day stress and cue-reactivity study.
+From an experiment performed on 45 cocaine-dependent participants that consist of daily diaries of cocaine use collected using the method of Time- Line Follow-Back (TLFB). 12 weeks prior and 4 weeks after completion of the 2-day stress and cue-reactivity study.
 
 - Objective
 
-Whether study participation alters drug seeking behavior. 
+Whether participation in a non-treatment outpatient clinical study is protective or detrimental(study participation alters drug seeking behavior or not) in terms of frequency of follow-up drug use among cocaine-dependent participants and to determine relevant demographic predictors of use parameters.
 
 ## ZIP Hidden Markov Model for Poisson Counts
 \small
@@ -65,7 +65,9 @@ Estimation of exact posterior distribution:
 - Gibbs sampler 
 - MCMC algorithms
 
-Implement tool: WinBUGS
+Implement tool: 
+
+- WinBUGS
 
 ## Comparison with other models
 
@@ -92,11 +94,23 @@ knitr::include_graphics("plot/figure5.jpg")
 Top: the matrix of weekly drug use counts for each participant in the study.
 Bottom: membership in the hidden state derived from posterior probabilities.
 
-```{r, echo=FALSE,warning= FALSE, message = FALSE, echo=FALSE,out.width='50%',fig.pos='h', fig.align = "center"}
+```{r, echo=FALSE,warning= FALSE, message = FALSE, echo=FALSE,out.width='55%',fig.pos='h', fig.align = "center"}
 knitr::include_graphics("plot/figure1.jpg")
 ```
 
 - $OR_{TRT_{O}} = 0.06 [0.01,0.19]$
 - Highly preventative effect: study-benefit (seen after week 12) in reducing drug-seeking behavior
+
+
+## Question
+
+1. ZIP vs ZINB 
+
+2. The number of state? '1-state','2-state','3-state'...
+
+3. Bayesian approach vs likelihood-based frequentist approach
+
+4. Deviance information criteria (DIC) is more commonly used for for Bayesian model selection? (Mentioned by the author for future work)
+
 
 
