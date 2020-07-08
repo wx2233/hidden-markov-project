@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d (TeX Live 2019)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: Proposal.aux
+The style file: abbrvnat.bst
+Database file #1: reference.bib
+Repeated entry---line 97 of file reference.bib
+ : @article{moore2012forecasting
+ :                              ,
+I'm skipping whatever remains of this entry
+You've used 20 entries,
+            2773 wiz_defined-function locations,
+            722 strings with 9313 characters,
+and the built_in function-call counts, 10790 in all, are:
+= -- 897
+> -- 848
+< -- 6
++ -- 284
+- -- 264
+* -- 1002
+:= -- 1724
+add.period$ -- 60
+call.type$ -- 20
+change.case$ -- 145
+chr.to.int$ -- 20
+cite$ -- 40
+duplicate$ -- 413
+empty$ -- 746
+format.name$ -- 290
+if$ -- 2172
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 23
+newline$ -- 108
+num.names$ -- 80
+pop$ -- 274
+preamble$ -- 1
+purify$ -- 128
+quote$ -- 0
+skip$ -- 334
+stack$ -- 0
+substring$ -- 331
+swap$ -- 21
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 205
+warning$ -- 0
+while$ -- 87
+width$ -- 0
+write$ -- 264
+(There was 1 error message)

@@ -1,6 +1,7 @@
 \documentclass[12pt]{article}
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
+\usepackage{mathrsfs}
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage{tocloft,lipsum,pgffor}
 \usepackage{appendix}
@@ -22,7 +23,7 @@
 \usepackage{microtype}      % microtypography
 \usepackage{lipsum}		% Can be removed after putting your text content
 \usepackage{amsmath,graphicx,amssymb}
-\usepackage[linesnumbered,boxed,ruled,commentsnumbered]{algorithm2e}%%算法包，注意设置所需可选项
+\usepackage[linesnumbered,boxed,ruled,commentsnumbered]{algorithm2e}%%算法包,注意设置所需可选项
 
 %\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
 \numberwithin{equation}{section}
@@ -68,43 +69,75 @@
 
 \section{Background}
 
+Mobile health, also known as mHealth, becomes more and more important in psychiatry. Smartphones now offer the technology to gather rich behavioral data on patients and deliver information about how symptoms vary in time, space, and across social dimensions (\citet{torous2015realizing}). Among mental health patients, there is a great interest in monitoring symptoms with mobile apps (\citet{vangeepuram2018smartphone}). The digital techonologites are used to monitor patients behavior over time through collection of the long-term objective data continuosly and automaticly. These data vary from activity data such as GPS, distance travaeled to social communication data such as text messages (eg, the number of outgoing SMS) and phone calls (eg, the number of incoming and outgoing calls, duration outgoing calls). 
+Indeed, using both self-reported information collected by the self-rating questionnaires and the smartphone sensor data offers a unique opportunity to describe the person in terms of his or her lifestyle and behavior at the physical, cognitive, and environmental level (\citet{cornet2018systematic}, \citet{torous2018characterizing}).
+
+Researchers hope to gain insight in the user’s clinical outcome through analysis of the variety of personal data. More studies are needed to establish the relationship between mobile  measurements and clinical symptoms. This mobile phone-based approach may provide an estimation of physiological and mental state. In addition, it may be valueable to predict the changes in clinical states and investigate causal inferences about state changes in patients (eg, those with affective disorders) \citet{dogan2017smartphone}
+
+Multiple statistical methods were developed for the analysis of time series data of mental health. Time series methods like autoregressive model(AR) are commonly used to analyze mood scores or depression rating scale (\citet{holmes2016applications}). \citet{moore2012forecasting}used exponential smoothing and Gaussian process regression to forecast depression in bipolar disorder. Nevertheless, when meeting with the unbounded count data and categorical outcomes, the regular time series model that are established on continuous outcomes with continuous distribution are not suitable (\citet{zucchini2017hidden}). Multiple machine learning and VARX algorithms are also used on psychological multivariate time series data (\citet{tuarob2017you}, \citet{reece2017forecasting}). Poisson regression model is also a useful approach. \citet{kolliakou2020mental} use this approach to quantify the impact of daily levels of relevant Twitter posts to the mental health crisis episodes.
+
+Also, for the mobile-communication count data, instead of being interested in the average count of mental patients' calls and texts for instance, we hope to find some meausure which allows us some access to the underlying variable we truly care about: the clinical state or the outcome of these patients.  Accordingly, a state-space model like the Hidden Markov Model, which uses observable data to estimate the status of a latent, or hidden, variable over time, may provide useful insights (\citet{reece2017forecasting}).  A Hidden Markov Model can be used to detect changes between different clinical states of patients over time. Hidden Markov model can also accommodate both over dispersion and serial dependency by allowing the probability distribution of each observation to depend on the unobserved state of a Markov chain(\citet{zucchini2017hidden}).
+
+In past few years, although HMM have been widely used in economics, bioinformatics, and engineering (e.g. \citet{macdonald1997hidden}, \citet{durbin1998biological},\citet{rabiner1989tutorial}), it has not been well-integrated within psychological research, especially for mobile-communication health data research. \citet{alafchi2018forecasting} proposed an approach to forecast new cases of bipolar disorder sing poisson hidden markov model based on new BD cases. 
+
+Moreover, there are some challenges for the mobile-communication data.
+\begin{enumerate}
+	\item Missing data are common in time series. It is expected that some missing values in self-reported data and the recording of clinical outcome might have impacts on the modeling. Imputation can be created for individuals having missing values on the observed variables and outcomes. 
+	\item The time series data of mental patients might be non-stationary. NS-HMM(Non-stationary Hidden Markov Model) was introduced to capture state duration behaviour by defining a set of dynamic transition probability parameters(\citet{mor2020systematic}).
+	\item There are excess zeros from count data(phone calls or texts) which are hard to be exlained by simple models. The multivariate zero-inflated model may be useful to deal with this problem.
+\end{enumerate}
 
 
-We use digital technologies to monitor continuously over time patients behavior. 
-
-1) We would like to leverage this information to study the causal effect of mobile communication (say daily counts of outgoing calls) on mental health scores (say anxiety). The goal of the project is to evaluate using simulations the performance of hidden markov models for zero-inflated count data in estimating the causal effect in N-of-1 time series data.
-
-\
-
-
-Mobile health Apps become more and more important in psychiatry. Among mental health patients, there is a great interest in monitoring symptoms with mobile apps [17].  
-The digital techonologites are used to monitor patients behavior over time through collection of the long-term objective data continuosly and automaticly. These data vary from activity data such as GPS, distance travaeled to social communication data such as text messages (eg, the number of outgoing SMS) and phone calls (eg, the number of incoming and outgoing calls, duration outgoing calls). 
-Indeed, using both self-reported information collected by the self-rating questionnaires and the smartphone sensor data offers a unique opportunity to describe the person in terms of his or her lifestyle and behavior at the physical, cognitive, and environmental level. \citet{cornet2018systematic}, \citet{torous2018characterizing} 
-
-Researchers hope to gain insight in the user’s clinical outcome through analysis of the variety of personal data. More studies are needed to establish the relationship between mobile  measurements and clinical symptoms. This mobile phone-based approach may provide an estimation of physiological and mental state. In addition, it may be valueable to predict the changes in clinical states and investigate causal inferences about state changes in patients (eg, those with affective disorders)\citet{dogan2017smartphone}
-
-
-Multiple statistical methods were developed for the analysis of time series data of mental health. However, when the observations are a sequence of unbounded counts, using regular time series models that are established on continuous outcomes with continuous distribution are not suitable.11,12 
-
-
-The Poisson distribution is a natural choice to describe such data. The most important exclusivity of this distribution is the equality of the mean and the variance. But often this exclusivity will not hold and variance is bigger than the mean, which is called over dispersion. Using mixture models is one way to handle this problem.12 As when the data are a series of unbounded counts there may be over dispersion, and serial dependency, using independent Poisson random variables are also not appropriate and some models that incorporate this dependency are needed.12
-Hidden Markov model can accommodate both over dispersion and serial dependency by allowing the probability distribution of each observation to depend on
-
-
-The rapid growth of smart-sensor integration in mobile phones and wearable devices has opened the prospect of increasing access to evidence-based mental health care.  
-In this review, the term sensor-based data includes the quantitative information supplied by the mobile phone and its embedded sensors. Information may range from acceleration to temperature and from light to pressure, but also from number of exchanged short message service (SMS) text messages to number of incoming and outgoing calls. 
-Even if the evidence of association between sensor-based data and psychiatric disorder status and/or severity of psychiatric symptoms is limited and scattered [15-17], it is expected that appropriate management of these data may initiate a new trend in health care provision characterized by tailored and timely interventions [18].
-
+A Mixed Effects Hidden Markov Model (\citet{altman2007mixed}, \citet{maruotti2012mixed})can capture the information of both mobile-comminication count data and the clinical outcome of mental patients. In order to deal with the above issues, we need to add more structures of the models.
 
 \section{Objective}
 
 The primary goal of this project is to build a hidden markov models for zero-inflated count data and self-reported categorical data to predict the clinical state of next time point through estimation of the transition probability of clinical states.
 
-Next, we need to evaluate using simulations the performance of different hidden markov models, such as basic HMM, HMM dealing with missing data, HMM for non-stationary time series and other time series model such as GLM, ARMA.
+Next, we need to use simulations to evaluate the prediction performance of different hidden markov models, such as basic HMM, HMM dealing with missing data, HMM for non-stationary time series and other time series model such as GLM, ARMA.
 
 Furthermore, the final goal is to obtain the causal effect between mobile communication time series data and the clincial outcomes.
 
 \section{Method}
+\subsection{The basic Multivariate Discrete Hidden Markov Model}
+
+This method is motivated by \citet{zhang2010multivariate} and \citet{ip2013partially}. Let $y_{i j j}$ denote the discrete response of subject $i$ at occasion $t$ on outcome $j, i=1, \ldots, N ; j=1$ $\ldots, J ; t=1, \ldots, T .$ We assume that each outcome indicates the level of response $k, k=1, \ldots$ $K_{j},$ from an individual as measured by an "item," such as a survey question. Specifically, $\mathbf{y}_{i t}=$ $\left(y_{i t 1}, \ldots, y_{i t J}\right)^{\prime}$ denotes the response vector of subject $i$ at occasion $t,$ and $\mathbf{y}_{i}=\left(\mathbf{y}_{i 1}^{\prime}, \ldots, \mathbf{y}_{i T}^{\prime}\right)^{\prime}$ represents the complete response pattern of subject $i$. Additionally, $z_{i t}=1, \ldots, S$ denotes the categorical (unobserved) latent state of subject $i$ at occasion $t .$ Thus, $\mathbf{z}_{i}=\left(z_{i 1}, \ldots, z_{i} T\right)^{\prime}$ is the state sequence of subject $i$ through the latent space over time. A first-order Markov chain for the latent variable assumes that the latent state at occasion $t+1$ depends only upon the latent state at occasion $t ;$ that is, for any $i, p\left(z_{i t} \mid z_{i 1}, \ldots, z_{i T}\right)=p\left(z_{i t} \mid z_{i t-1}\right) .$ Accordingly, the basic hidden Markov model contains the following three sets of parameters:
+
+
+\begin{enumerate}
+	\item   $\boldsymbol{\tau}=\left(\tau_{r s}\right),$ the $S\times S$ matrix of time-homogeneous transition probabilities between latent states, where for any $i, \tau_{r s}=p\left(z_{i t}=s \mid z_{i t-1}=r\right), t=2, \ldots, T$
+	\item  $\boldsymbol{\alpha}_{1}=\left(\alpha_{11}, \ldots, \alpha_{1 S}\right)^{\prime},$ the $S \times 1$ vector of marginal probabilities of the states at occasion 1 $\alpha_{1 s}=p\left(z_{i 1}=s\right) .$ The vector $\boldsymbol{\alpha}_{t}=\left(\alpha_{t 1}, \ldots, \alpha_{t S}\right)^{\prime}, t=2, \ldots, T,$ can be recursively derived
+by the formula $\boldsymbol{\alpha}_{t}^{\prime}=\boldsymbol{\alpha}_{t-1}^{\prime} \boldsymbol{\tau}$
+
+	\item$\boldsymbol{\pi}=\left(\pi_{j s k}\right),$ the $J \times S \times K_{j}$ array of state-conditional response probabilities, where $k$ is the index of outcome category, $k=1, \ldots, K_{j},$ and for any $i, t, \pi_{j s k}=\operatorname{Pr}\left(y_{i t j}=k \mid z_{i t}=s\right),$ where $\sum_{k=1}^{K_{j}} \pi_{j s k}=1$
+\end{enumerate} 
+
+Assuming conditional independence between responses given the latent state, the marginal probability of a response pattern $\mathbf{y}_{i}$ is given by
+\[
+p\left(\mathbf{y}_{i}\right)=\sum_{\mathcal{Z}} p\left(\mathbf{z}_{i}\right) \prod_{t=1}^{T} p\left(\mathbf{y}_{i t} \mid z_{i t}\right)
+\]
+with the summation over the entire latent state space $\mathscr{Z}$ of size $S^{T}$, and
+\[
+p\left(\mathbf{z}_{i}\right)=\alpha_{1 Z_{i 1}} \prod_{t=2}^{T} \tau_{z_{i t-1} z_{i t}}
+\]
+Furthermore, we write out the likelihood equation using the local independence assumption given a latent state:
+\[
+p\left(\mathbf{y}_{i t} \mid z_{i t}=s\right)=\prod_{j=1}^{J} \prod_{k=1}^{K_{j}} \pi_{j s k}^{\delta\left(y_{i t j}, k\right)}
+\]
+where $\delta\left(y_{i t j}, k\right)=1$ if $y_{i t j}=k,$ and 0 otherwise.
+
+\subsection{Mixed effects Hidden Markov model}
+\citet{altman2007mixed} proposed a generalized mixed effects linear model for each individual transition within a hidden Markov model (HMM):
+
+\[
+\operatorname{logit} \quad p\left(z_{i t}=s \mid z_{i t-1}=r\right)=x_{i}^{\prime} \gamma_{r s}+w_{i}^{\prime} \theta_{i}
+\]
+where $z_{i t}$ denotes the latent state for individual $i$ at time $t, \quad s$ is a vector of regression coefficients for covariate $x_{i}$ for transitioning from state $r$ at time $t-1$ (state of origination) to state $s$ at time $t$ (state of destination), and $w_{i}$ and $\theta$ are the random-effects design vector and random-effects vector, respectively.
+
+\subsection{Model selection}
+
+The appropriate number of hidden states was determined by selecting the model according to the lowest Akaike Information Criterion (AIC) and Bayesian Information Criterion (BIC). 
+
 
 \bibliography{reference}
 \end{document}

@@ -1,9 +1,25 @@
-\begin{thebibliography}{3}
+\begin{thebibliography}{20}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Alafchi et~al.(2018)Alafchi, Yazdi-Ravandi, Najafi-Vosough, Ghaleiha,
+  and Sadeghifar]{alafchi2018forecasting}
+B.~Alafchi, S.~Yazdi-Ravandi, R.~Najafi-Vosough, A.~Ghaleiha, and
+  M.~Sadeghifar.
+\newblock Forecasting new cases of bipolar disorder using poisson hidden markov
+  model.
+\newblock \emph{International Clinical Neuroscience Journal}, 5\penalty0
+  (1):\penalty0 7, 2018.
+
+\bibitem[Altman(2007)]{altman2007mixed}
+R.~M. Altman.
+\newblock Mixed hidden markov models: an extension of the hidden markov model
+  to the longitudinal data setting.
+\newblock \emph{Journal of the American Statistical Association}, 102\penalty0
+  (477):\penalty0 201--210, 2007.
 
 \bibitem[Cornet and Holden(2018)]{cornet2018systematic}
 V.~P. Cornet and R.~J. Holden.
@@ -20,6 +36,84 @@ E.~Dogan, C.~Sander, X.~Wagner, U.~Hegerl, and E.~Kohls.
 \newblock \emph{Journal of medical Internet research}, 19\penalty0
   (7):\penalty0 e262, 2017.
 
+\bibitem[Durbin et~al.(1998)Durbin, Eddy, Krogh, and
+  Mitchison]{durbin1998biological}
+R.~Durbin, S.~R. Eddy, A.~Krogh, and G.~Mitchison.
+\newblock \emph{Biological sequence analysis: probabilistic models of proteins
+  and nucleic acids}.
+\newblock Cambridge university press, 1998.
+
+\bibitem[Holmes et~al.(2016)Holmes, Bonsall, Hales, Mitchell, Renner,
+  Blackwell, Watson, Goodwin, and Di~Simplicio]{holmes2016applications}
+E.~A. Holmes, M.~Bonsall, S.~Hales, H.~Mitchell, F.~Renner, S.~Blackwell,
+  P.~Watson, G.~Goodwin, and M.~Di~Simplicio.
+\newblock Applications of time-series analysis to mood fluctuations in bipolar
+  disorder to promote treatment innovation: a case series.
+\newblock \emph{Translational psychiatry}, 6\penalty0 (1):\penalty0 e720--e720,
+  2016.
+
+\bibitem[Ip et~al.(2013)Ip, Zhang, Rejeski, Harris, and
+  Kritchevsky]{ip2013partially}
+E.~Ip, Q.~Zhang, J.~Rejeski, T.~Harris, and S.~Kritchevsky.
+\newblock Partially ordered mixed hidden markov model for the disablement
+  process of older adults.
+\newblock \emph{Journal of the American Statistical Association}, 108\penalty0
+  (502):\penalty0 370--384, 2013.
+
+\bibitem[Kolliakou et~al.(2020)Kolliakou, Bakolis, Chandran, Derczynski,
+  Werbeloff, Osborn, Bontcheva, and Stewart]{kolliakou2020mental}
+A.~Kolliakou, I.~Bakolis, D.~Chandran, L.~Derczynski, N.~Werbeloff, D.~P.
+  Osborn, K.~Bontcheva, and R.~Stewart.
+\newblock Mental health-related conversations on social media and crisis
+  episodes: a time-series regression analysis.
+\newblock \emph{Scientific reports}, 10\penalty0 (1):\penalty0 1--7, 2020.
+
+\bibitem[MacDonald and Zucchini(1997)]{macdonald1997hidden}
+I.~L. MacDonald and W.~Zucchini.
+\newblock \emph{Hidden Markov and other models for discrete-valued time
+  series}, volume 110.
+\newblock CRC Press, 1997.
+
+\bibitem[Maruotti and Rocci(2012)]{maruotti2012mixed}
+A.~Maruotti and R.~Rocci.
+\newblock A mixed non-homogeneous hidden markov model for categorical data,
+  with application to alcohol consumption.
+\newblock \emph{Statistics in Medicine}, 31\penalty0 (9):\penalty0 871--886,
+  2012.
+
+\bibitem[Moore et~al.(2012)Moore, Little, McSharry, Geddes, and
+  Goodwin]{moore2012forecasting}
+P.~J. Moore, M.~A. Little, P.~E. McSharry, J.~R. Geddes, and G.~M. Goodwin.
+\newblock Forecasting depression in bipolar disorder.
+\newblock \emph{IEEE Transactions on Biomedical Engineering}, 59\penalty0
+  (10):\penalty0 2801--2807, 2012.
+
+\bibitem[Mor et~al.(2020)Mor, Garhwal, and Kumar]{mor2020systematic}
+B.~Mor, S.~Garhwal, and A.~Kumar.
+\newblock A systematic review of hidden markov models and their applications.
+\newblock \emph{ARCHIVES OF COMPUTATIONAL METHODS IN ENGINEERING}, 2020.
+
+\bibitem[Rabiner(1989)]{rabiner1989tutorial}
+L.~R. Rabiner.
+\newblock A tutorial on hidden markov models and selected applications in
+  speech recognition.
+\newblock \emph{Proceedings of the IEEE}, 77\penalty0 (2):\penalty0 257--286,
+  1989.
+
+\bibitem[Reece et~al.(2017)Reece, Reagan, Lix, Dodds, Danforth, and
+  Langer]{reece2017forecasting}
+A.~G. Reece, A.~J. Reagan, K.~L. Lix, P.~S. Dodds, C.~M. Danforth, and E.~J.
+  Langer.
+\newblock Forecasting the onset and course of mental illness with twitter data.
+\newblock \emph{Scientific reports}, 7\penalty0 (1):\penalty0 1--11, 2017.
+
+\bibitem[Torous et~al.(2015)Torous, Staples, and Onnela]{torous2015realizing}
+J.~Torous, P.~Staples, and J.-P. Onnela.
+\newblock Realizing the potential of mobile mental health: new methods for new
+  data in psychiatry.
+\newblock \emph{Current psychiatry reports}, 17\penalty0 (8):\penalty0 61,
+  2015.
+
 \bibitem[Torous et~al.(2018)Torous, Staples, Barnett, Sandoval, Keshavan, and
   Onnela]{torous2018characterizing}
 J.~Torous, P.~Staples, I.~Barnett, L.~R. Sandoval, M.~Keshavan, and J.-P.
@@ -27,5 +121,35 @@ J.~Torous, P.~Staples, I.~Barnett, L.~R. Sandoval, M.~Keshavan, and J.-P.
 \newblock Characterizing the clinical relevance of digital phenotyping data
   quality with applications to a cohort with schizophrenia.
 \newblock \emph{NPJ digital medicine}, 1\penalty0 (1):\penalty0 1--9, 2018.
+
+\bibitem[Tuarob et~al.(2017)Tuarob, Tucker, Kumara, Giles, Pincus, Conroy, and
+  Ram]{tuarob2017you}
+S.~Tuarob, C.~S. Tucker, S.~Kumara, C.~L. Giles, A.~L. Pincus, D.~E. Conroy,
+  and N.~Ram.
+\newblock How are you feeling?: A personalized methodology for predicting
+  mental states from temporally observable physical and behavioral information.
+\newblock \emph{Journal of biomedical informatics}, 68:\penalty0 1--19, 2017.
+
+\bibitem[Vangeepuram et~al.(2018)Vangeepuram, Mayer, Fei, Hanlen-Rosado,
+  Andrade, Wright, and Horowitz]{vangeepuram2018smartphone}
+N.~Vangeepuram, V.~Mayer, K.~Fei, E.~Hanlen-Rosado, C.~Andrade, S.~Wright, and
+  C.~Horowitz.
+\newblock Smartphone ownership and perspectives on health apps among a
+  vulnerable population in east harlem, new york.
+\newblock \emph{Mhealth}, 4, 2018.
+
+\bibitem[Zhang et~al.(2010)Zhang, Snow~Jones, Rijmen, and
+  Ip]{zhang2010multivariate}
+Q.~Zhang, A.~Snow~Jones, F.~Rijmen, and E.~H. Ip.
+\newblock Multivariate discrete hidden markov models for domain-based
+  measurements and assessment of risk factors in child development.
+\newblock \emph{Journal of Computational and Graphical Statistics}, 19\penalty0
+  (3):\penalty0 746--765, 2010.
+
+\bibitem[Zucchini et~al.(2017)Zucchini, MacDonald, and
+  Langrock]{zucchini2017hidden}
+W.~Zucchini, I.~L. MacDonald, and R.~Langrock.
+\newblock \emph{Hidden Markov models for time series: an introduction using R}.
+\newblock CRC press, 2017.
 
 \end{thebibliography}
